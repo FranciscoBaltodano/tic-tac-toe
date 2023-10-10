@@ -10,10 +10,10 @@ Este proyecto está en desarrollo y tiene como objetivo implementar un modo de j
 - **Próximas Características:** Estamos trabajando en agregar la opción de jugar contra la computadora. ¡Mantente atento para futuras actualizaciones!
 
 ### Modo Claro
-<img src="lightMode.png" alt="Modo Claro" width="300"/>
+<img src="imagenes/lightMode.png" alt="Modo Claro" width="300"/>
 
 ### Modo Oscuro
-<img src="darkMode.png" alt="Modo Oscuro" width="300"/>
+<img src="imagenes/darkMode.png" alt="Modo Oscuro" width="300"/>
 
 
 ## Cómo Jugar

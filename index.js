@@ -10,7 +10,6 @@ let contadorX = 0;
 let contador0 = 0;
 let equis = true;
 let dark = true;
-let cpu = false;
 patronGanador = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
 
 const darkMode = () => {
@@ -37,10 +36,21 @@ const reiniciar=()=>{
 const verificarGanador = () => {
     for (let i = 0; i < 8; i++) {
         const condicion = patronGanador[i];
-        const a = paneles[condicion[0] - 1].innerHTML;
-        const b = paneles[condicion[1] - 1].innerHTML;
-        const c = paneles[condicion[2] - 1].innerHTML;
-        if (a !== "" && a === b && b === c) {
+        const a = paneles[condicion[0] - 1];
+        const b = paneles[condicion[1] - 1];
+        const c = paneles[condicion[2] - 1];
+        if (a.innerHTML !== "" && a.innerHTML === b.innerHTML && b.innerHTML === c.innerHTML) {
+            
+            a.style.backgroundColor="green"
+            b.style.backgroundColor="green"
+            c.style.backgroundColor="green"
+            
+            setTimeout(() => {
+                a.style.backgroundColor="#5d5d5e38"
+                b.style.backgroundColor="#5d5d5e38"
+                c.style.backgroundColor="#5d5d5e38"
+            }, 1000);
+
             if (a=="x") {
                 resultado.innerHTML=`El ganador es ${nombreX.value}`;
                 contadorX ++
@@ -67,7 +77,7 @@ paneles.forEach(panel => {
     panel.addEventListener("click", () => {
         if (panel.innerHTML === "") {
             panel.classList.add("click");
-
+            
             setTimeout(() => {
                 panel.classList.remove("click");
                 panel.classList.add("afterClick");
@@ -78,13 +88,10 @@ paneles.forEach(panel => {
                 verificarGanador(); 
             }, 1200);
             
-            if(!cpu){
-                setTimeout(() => {
-                    equis ? (panel.innerHTML = "x") : (panel.innerHTML = "o");
-                }, 600);
-            }else{
-                panel.innerHTML = "x"
-            }
+            setTimeout(() => {
+                equis ? (panel.innerHTML = "x") : (panel.innerHTML = "o");
+            }, 600);
+
 
             equis = !equis;
         }

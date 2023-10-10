@@ -53,6 +53,13 @@ input{
     background-color: #9b9b9b;
 }
 
+.panelGanadorAntes{
+    background-color: green;
+}
+.panelGanadorDespues{
+    transition: 1s;
+    background-color: #9b9b9b;
+}
 .hover{
     transition: 0.3s;
     background-color: #6e6e6e;
@@ -88,3 +95,4 @@ button:hover{
     scale: 1.1;
     cursor: pointer;
 }
+
