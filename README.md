@@ -9,13 +9,12 @@ Este proyecto está en desarrollo y tiene como objetivo implementar un modo de j
 - **Juega contra un amigo:** Desafía a tus amigos y familiares en emocionantes partidas de Tic-Tac-Toe.
 - **Próximas Características:** Estamos trabajando en agregar la opción de jugar contra la computadora. ¡Mantente atento para futuras actualizaciones!
 
-## Capturas de Pantalla
-
 ### Modo Claro
-![Modo Claro](lightMode.png)
+<img src="lightMode.png" alt="Modo Claro" width="300"/>
 
 ### Modo Oscuro
-![Modo Oscuro](darkMode.png)
+<img src="darkMode.png" alt="Modo Oscuro" width="300"/>
+
 
 ## Cómo Jugar
 1. **Xs y Os:** El jugador 1 es X y el jugador 2 es O.
