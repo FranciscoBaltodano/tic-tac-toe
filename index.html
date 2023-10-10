@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/5a62341dfd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Bienvenido a X-0</h1>
+    <h3 id="resultado">Las reglas ya te las sabes</h3>
+    
+    <section class="marcador">
+        <input id="nombreX" type="text" value="PlayerX" maxlength="5">
+        <span id="puntajeX">0</span>
+        :
+        <span id="puntaje0">0</span>
+        <input id="nombre0" type="text" value="Player0" maxlength="5">
+    </section>
+    
+    <section class="tablero">
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+    </section>
+
+    <section>
+        <button onclick="reiniciar()">Reiniciar</button>
+        <button id="darkBtn" onclick="darkMode()"><i class="fa-regular fa-moon"></i></button>    
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
