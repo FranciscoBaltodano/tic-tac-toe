@@ -96,3 +96,7 @@ button:hover{
     cursor: pointer;
 }
 
+.comenzar{
+    transition: 1.5s;
+    background-color: green;
+}

@@ -2,7 +2,9 @@
 
 ¡Bienvenido a Tic-Tac-Toe, el clásico juego de Equis Cero para todos!
 
-Este proyecto está en desarrollo y tiene como objetivo implementar un modo de juego que permita jugar contra la CPU.
+## Nuevo modo de Juego!!
+El modo de juego CPUmode ha llegado a Tic-Tac-Toe!
+Ahora disfruta jugar contra el CPU.
 
 ## Funcionalidades
 - **Modo Oscuro:** Disfruta del juego tanto de día como de noche.
