@@ -30,40 +30,28 @@ paneles.forEach(panel => {
     panel.addEventListener("mouseleave", () => {
         panel.classList.remove("hover");
     });
-
     // Al hacer click en un panel
         panel.addEventListener("click", () => {
-                
             // si el panel esta disponible (vacio)
-                if (panel.innerHTML === "") {     
-                    
-                    // Animaciones
-                        panel.classList.add("click");
-                        setTimeout(() => {
-                            panel.classList.remove("click");
-                            panel.classList.add("afterClick");
-                        }, 600);
-
-                    // Animacion y movimiento del CPU
-                        setTimeout(() => {
-                                panel.classList.remove("afterClick");
-                                verificarGanador(); 
-                                if(cpuPuedeJugar){
-                                    cpuMovimiento();
-                                };
-                        }, 1200);
-                        
+                if (panel.innerHTML === "") {                         
+                    animacionPanel(panel);
                     // llenar el panel
-                        setTimeout(() => {
-                                if(cpuPuedeJugar){
-                                    panel.innerHTML = "x";
-                                }else{
-                                    equis ? (panel.innerHTML = "x") : (panel.innerHTML = "o");
-                                }
-                        }, 600);
-
+                    setTimeout(() => {
+                            if(cpuPuedeJugar){
+                                panel.innerHTML = "x";
+                            }else{
+                                equis ? (panel.innerHTML = "x") : (panel.innerHTML = "o");
+                            }
+                    }, 600);
+                    // movimiento del CPU
+                    setTimeout(() => {
+                            verificarGanador(); 
+                            if(cpuPuedeJugar){
+                                cpuMovimiento();
+                            };
+                    }, 1200);
                     // Cambiar de equis a cero
-                        equis = !equis;
+                    equis = !equis;
                 };
         });
 });
@@ -90,7 +78,7 @@ const verificarGanador = () => {
         const b = paneles[condicion[1] - 1];
         const c = paneles[condicion[2] - 1];
         if (a.innerHTML !== "" && a.innerHTML === b.innerHTML && b.innerHTML === c.innerHTML) {
-            
+
             a.style.backgroundColor="green"
             b.style.backgroundColor="green"
             c.style.backgroundColor="green"
@@ -119,13 +107,17 @@ const cpuMovimiento = () => {
     if (paneles.every(panel => panel.innerHTML !== "")) {
         // Todas las casillas están llenas, terminar la función sin hacer ningún movimiento
         reiniciar();
+        return;
     }
 
     for (let i = 0; i < patronCPU.length; i++) {
         const [pos1, pos2, pos3] = patronCPU[i];
         if (paneles[pos1].innerHTML === "x" && paneles[pos2].innerHTML === "x" && paneles[pos3].innerHTML === "") {
-            paneles[pos3].innerHTML = "o";
-            verificarGanador();
+            animacionPanel(paneles[pos3]);
+            setTimeout(() => {
+                paneles[pos3].innerHTML = "o";
+                verificarGanador();
+            }, 600);
             return;
         }
     }
@@ -135,16 +127,37 @@ const cpuMovimiento = () => {
         numero = Math.floor(Math.random() * 9);
     } while (paneles[numero].innerHTML !== "");
 
-    paneles[numero].innerHTML = "o";
-    verificarGanador();
+    animacionPanel(paneles[numero]);
+    setTimeout(() => {
+        paneles[numero].innerHTML = "o";
+        verificarGanador();
+    }, 600);
+    return;
 };
 
-const reiniciar=()=>{
+const reiniciar = ()=>{
     paneles.forEach(panel => {
-        panel.innerHTML=""
-        panel.classList.remove("click")
-        panel.classList.remove("afterClick")
+        for (let i = 0; i < paneles.length; i++) {
+            setTimeout(() => {            
+                animacionPanel(paneles[i]);
+                setTimeout(() => {
+                    panel.innerHTML=""
+                }, 600);
+            }, 50*i);
+        };
     });
+};
+
+const animacionPanel=(panel)=>{
+    panel.classList.add("click");
+    setTimeout(() => {
+        panel.classList.remove("click");
+        panel.classList.add("afterClick");
+    }, 600);
+
+    setTimeout(() => {
+            panel.classList.remove("afterClick");
+    }, 1200);
 };
 
 const darkMode = () => {
@@ -159,6 +172,3 @@ const darkMode = () => {
     body.style.transition = "3s";
     dark = !dark;
 }
-
-
-

@@ -9,7 +9,6 @@ Ahora disfruta jugar contra el CPU.
 ## Funcionalidades
 - **Modo Oscuro:** Disfruta del juego tanto de día como de noche.
 - **Juega contra un amigo:** Desafía a tus amigos y familiares en emocionantes partidas de Tic-Tac-Toe.
-- **Próximas Características:** Estamos trabajando en agregar la opción de jugar contra la computadora. ¡Mantente atento para futuras actualizaciones!
 
 ### Modo Claro
 <img src="Imagenes/lightMode.png" alt="Modo Claro" width="300"/>
