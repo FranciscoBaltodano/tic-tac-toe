@@ -73,19 +73,7 @@ input{
     cursor: pointer;
 } 
 
-.reiniciar{
-    transition: 0.3s;
-    transform: scale(0,1);
-    cursor: pointer;
-} 
-
 .afterClick{
-    transition: 0.3s;
-    transform: scale(1);
-    cursor: pointer;
-}
-
-.afterReiniciar{
     transition: 0.3s;
     transform: scale(1);
     cursor: pointer;
