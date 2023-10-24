@@ -165,9 +165,11 @@ const darkMode = () => {
     if (dark) {
         body.style.backgroundColor = "#00192f";
         body.style.color = "white";
+        darkBtn.innerHTML='<i class="fa-regular fa-sun"></i>';
     } else {
         body.style.backgroundColor = "white"; 
         body.style.color = "#002342";
+        darkBtn.innerHTML='<i class="fa-regular fa-moon"></i>';
     }
     body.style.transition = "3s";
     dark = !dark;
