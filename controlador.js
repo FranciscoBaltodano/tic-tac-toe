@@ -10,6 +10,7 @@ let contadorX = 0;
 let contador0 = 0;
 let dark = true;
 let equis = true;
+let clickHabilitado = true;
 let cpuPuedeJugar = false;
 
 patronGanador = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
@@ -33,8 +34,13 @@ paneles.forEach(panel => {
     // Al hacer click en un panel
         panel.addEventListener("click", () => {
             // si el panel esta disponible (vacio)
-                if (panel.innerHTML === "") {                         
+                if (clickHabilitado && panel.innerHTML === "") {                         
                     animacionPanel(panel);
+                    // Deshabilita el clic durante un segundo
+                    clickHabilitado = false;
+                    setTimeout(() => {
+                            clickHabilitado = true;
+                    }, 1000);
                     // llenar el panel
                     setTimeout(() => {
                             if(cpuPuedeJugar){
