@@ -5,7 +5,6 @@ let puntajeX = document.getElementById("puntajeX");
 let puntaje0 = document.getElementById("puntaje0");
 let resultado = document.getElementById("resultado");
 let paneles = Array.from(document.querySelectorAll(".panel"));
-
 let contadorX = 0;
 let contador0 = 0;
 let dark = true;
@@ -73,7 +72,6 @@ const modoDeJuego=()=>{
         (mode.innerHTML="CPU MODE",
         nombre0.value="Player0",
         resultado.innerText="Modo de juego: 2PLAYERS");
-
     reiniciar();
 };
 
@@ -143,12 +141,12 @@ const cpuMovimiento = () => {
 
 const reiniciar = ()=>{
     paneles.forEach(panel => {
+        setTimeout(() => {
+            panel.innerHTML=""
+        }, 600);
         for (let i = 0; i < paneles.length; i++) {
             setTimeout(() => {            
                 animacionPanel(paneles[i]);
-                setTimeout(() => {
-                    panel.innerHTML=""
-                }, 600);
             }, 50*i);
         };
     });
